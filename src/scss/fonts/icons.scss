@@ -1,0 +1,81 @@
+%ic {
+    font-family: "icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[class*="icon-"] {
+    &:before {
+        @extend %ic;
+        display: block;
+    }
+}
+
+.icon-basket:before {
+    content: "\e902";
+}
+
+.icon-arrow-down:before {
+    content: "\e900";
+}
+
+.icon-arrow-right:before {
+    content: "\e901";
+}
+
+.icon-arrow-right-white:before {
+    content: "\e903";
+}
+
+.icon-basket-min:before {
+    content: "\e904";
+}
+
+.icon-bust:before {
+    content: "\e905";
+}
+
+.icon-heart:before {
+    content: "\e906";
+}
+
+.icon-heart-min:before {
+    content: "\e907";
+}
+
+.icon-letter:before {
+    content: "\e908";
+}
+
+.icon-location:before {
+    content: "\e909";
+}
+
+.icon-location-min:before {
+    content: "\e90a";
+}
+
+.icon-loupe:before {
+    content: "\e90b";
+}
+
+.icon-scales:before {
+    content: "\e90c";
+}
+
+.icon-star:before {
+    content: "\e90d";
+}
+
+.icon-tel:before {
+    content: "\e90e";
+}
+
+.icon-time:before {
+    content: "\e90f";
+}

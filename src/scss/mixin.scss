@@ -1,0 +1,36 @@
+@mixin adaptive($property, $startSize, $minSize, $type) {
+    $addSize: $startSize - $minSize;
+
+    @if $type==1 {
+        // если меньше контейнера
+        #{$property}: $startSize + px;
+
+        @media (max-widht: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+        }
+    }
+
+    @else if $type==2 {
+        // если больше контейнера
+        #{$property}: $startSize + px;
+
+        @media (min-widht: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+        }
+    }
+
+    @else {
+        // всегда
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+}
+
+@mixin adaptiveFont($pcSizeFont, $mobSizeFont) {
+    $addSizeFont: $pcSizeFont - $mobSizeFont;
+    font-size: calc(#{$mobSizeFont + px} + #{$addSizeFont} * (100vw / #{$maxWidth}));
+}
+
+@mixin adaptivePadding($property, $startPad, $minPad) {
+    $addPad: $startPad - $minPad;
+    #{$property}: calc(#{$minPad + px} + #{$addPad} * ((100vw - 320px) / #{$maxWidth - 320}));
+}
